@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "baseUrl": "src/lib",
+    "types": ["node"]
+  },
+  "exclude": ["node_modules", "src/lib/**/*.test.*"],
+  "include": ["src/lib/**/*"]
+}
