@@ -1,4 +1,6 @@
-# Konomi Transaction Fullstack ( Localhost:8545 )
+# web3-typescript-fullstack
+
+( Localhost:8545 )
 
 https://user-images.githubusercontent.com/56249189/160244513-423eec2d-f6aa-4e17-bbfe-61e4a73cb1ff.mp4
 
@@ -95,4 +97,5 @@ Smart-contract: Solidity, ethers, hardhat
 ### Reference
 
 1. Web3React: https://hackmd.io/Ykpp1MWLTjixIZG2ZJEShA
+
 # web3-typescript-fullstack

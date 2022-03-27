@@ -1,5 +1,5 @@
 {
-  "name": "konomi-front-end",
+  "name": "web3-typescript-fullstack",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -177,9 +177,6 @@
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
       "^.+\\.module\\.(css|sass|scss)$"
-    ],
-    "modulePaths": [
-      "/Users/lexchou/konomi-front-end/src"
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
