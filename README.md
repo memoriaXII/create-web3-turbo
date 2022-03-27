@@ -2,8 +2,6 @@
 
 ( Localhost:8545 )
 
-https://user-images.githubusercontent.com/56249189/160244513-423eec2d-f6aa-4e17-bbfe-61e4a73cb1ff.mp4
-
 This project demonstrates single transaction and batch transaction use case. It comes with a transaction and batch transaction solidity contract, a reactjs front-end to interact with transaction contract, a backend server to subscribe event and continue listen using ether.js websocket api
 
 Try running some of the following tasks:
