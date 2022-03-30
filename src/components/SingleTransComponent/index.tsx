@@ -11,6 +11,7 @@ import { TransactionInfo } from 'type'
 import { ActionType } from 'reducers/transaction/types'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'reducers'
+import { SingleParameters } from 'type'
 
 const Loader = lazy(() => import('components/Loader'))
 const InputField = lazy(() => import('components/FormFields').then((module) => ({ default: module.InputField })))
@@ -38,7 +39,7 @@ const SingleTransComponent: FC = () => {
     })
   }
 
-  const getAllTransactionsApiEvents = async () => {
+  const getAllTransactionsApiEvents = async (): Promise<void> => {
     try {
       const allTransactionsEventsRes = await Promise.all([
         await getLastEvent(),
@@ -50,7 +51,7 @@ const SingleTransComponent: FC = () => {
     }
   }
 
-  const getUserAllTransactionsFn = async () => {
+  const getUserAllTransactionsFn = async (): Promise<void> => {
     setTransactionLoading(true)
     try {
       const res = await getUserAllTransactions()
@@ -79,7 +80,7 @@ const SingleTransComponent: FC = () => {
     }
   }
 
-  const initEvent = async () => {
+  const initEvent = async (): Promise<void> => {
     try {
       const transContract = await getTransactionContract()
       transContract.on('Transfer', () => {})
@@ -88,29 +89,34 @@ const SingleTransComponent: FC = () => {
     }
   }
 
-  const sendTransaction = async (values: TransactionInfo) => {
+  const sendTransaction = async (values: TransactionInfo): Promise<void> => {
     const { addressTo, amount, message } = values
-    const transContract = await getTransactionContract()
     try {
       setButtonLoading(true)
       const parsedAmount = ethers.utils.parseEther(amount.toString())
-      const options = {
-        from: account,
+
+      const options: SingleParameters = {
+        from: account!,
         value: parsedAmount._hex,
         gasPrice: '0x2540BE400',
       }
       try {
         if (isAddress(addressTo)) {
           const tx = await createTransaction(addressTo, parsedAmount, message, options)
-          transContract.on(
-            'Transfer',
-            (sender: any, receiver: any, amount: any, message: any, timestamp: any, keyword: any) => {
-              getUserAllTransactionsFn()
-              if (sender && receiver && amount && message && timestamp) {
+          const transactionRecipt = await tx.wait()
+
+          transactionRecipt.events.map(async (value: any) => {
+            const event = value.event
+            if (event === 'Transfer') {
+              const from = value.args.from
+              if (from === account) {
+                console.log('---- singleMintSFH.events.map owner Transfer ---')
+                getUserAllTransactionsFn()
                 setButtonLoading(false)
+                //todo: push array
               }
             }
-          )
+          })
         }
       } catch (e) {
         if (e && formatError(e)) {

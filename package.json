@@ -1,5 +1,5 @@
 {
-  "name": "web3-typescript-fullstack",
+  "name": "konomi-front-end",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -112,7 +112,11 @@
     "webpack-dev-server": "^4.6.0",
     "webpack-manifest-plugin": "^4.0.2",
     "workbox-webpack-plugin": "^6.4.1",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "hardhat-gas-reporter": "^1.0.7",
+    "prettier": "^2.5.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.13",
+    "solhint": "^3.3.7"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -177,6 +181,9 @@
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
       "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "modulePaths": [
+      "/Users/lexchou/konomi-front-end/src"
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",

@@ -38,10 +38,14 @@ export interface TransactionInfo {
 
 export interface Parameters {
   from: string | undefined
-  to: string | undefined
-  data: string
   value: string
   gasPrice: string | undefined
   gas: string | undefined
   gasLimit: string | undefined
+}
+
+export interface SingleParameters {
+  from: string | undefined
+  value: string
+  gasPrice: string | undefined
 }

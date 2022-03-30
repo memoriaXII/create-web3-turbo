@@ -37,7 +37,7 @@ const BatchTransComponent: FC = () => {
   const { batchTransactionList } = useSelector((root: RootState) => root.batchTransactions)
   const dispatch = useDispatch()
   const { ethereum } = window
-  const { getTransactionContract, getUserMultiCallTransactions } = useTransactionContract()
+  const { getTransactionContract, getUserMultiCallTransactions, createBatchTransactions } = useTransactionContract()
   const [multiButtonLoading, setMultiButtonLoading] = useState<boolean | null>(null)
   const [multiTransactionLoading, setMultiTransactionLoading] = useState<boolean | null>(null)
 
@@ -127,15 +127,11 @@ const BatchTransComponent: FC = () => {
         if (gas > 8e6) {
           gas = 8e6
         }
-        const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'))
-        const contract = new web3.eth.Contract(TransContract.abi as AbiItem[], `${Contracts[CHAIN].transaction}`)
-        let data = await contract.methods.multiTransactionCall(addressArray, subAmounts).encodeABI()
+
         const parsedAmount = ethers.utils.parseEther((totalAmount * 1.05).toString())
 
-        const params: Parameters = {
+        const options: Parameters = {
           from: account!,
-          to: `${Contracts[CHAIN].transaction}`,
-          data,
           value: parsedAmount._hex,
           gasPrice: '0x2540BE400',
           gas: undefined,
@@ -143,20 +139,21 @@ const BatchTransComponent: FC = () => {
         }
 
         if (!window.ethereum) {
-          params.gas = '0x' + gas.toString(16)
-          params.gasPrice = undefined
+          options.gas = '0x' + gas.toString(16)
+          options.gasPrice = undefined
         } else {
-          params.gasLimit = '0xF4240'
+          options.gasLimit = '0xF4240'
         }
 
-        let txID = await ethereum.request({
-          method: 'eth_sendTransaction',
-          params: [params],
-        })
+        const tx = await createBatchTransactions(addressArray, subAmounts, options)
 
-        transContract.on('MultiTransfer', (receiverArray: string[]) => {
-          getUserMultiCallTransactionsFn()
-          if (receiverArray) {
+        const transactionRecipt = await tx.wait()
+
+        transactionRecipt.events.map(async (value: any) => {
+          const event = value.event
+          if (event === 'MultiTransfer') {
+            console.log('---- bacthMintSFH.events.map owner Transfer ---')
+            getUserMultiCallTransactionsFn()
             setMultiButtonLoading(false)
           }
         })

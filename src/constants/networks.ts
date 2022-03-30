@@ -24,7 +24,7 @@ export const NETWORK_LABEL = {
 
 export const Contracts: AddressMap = {
   1337: {
-    transaction: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    transaction: '0x3Aa5ebB10DC797CAC828524e59A333d0A371443c',
   },
   [ChainId.BSC_TESTNET]: {
     transaction: '0x01803Ef6Ab4762515972adca1c0D9Bc5D231223D',

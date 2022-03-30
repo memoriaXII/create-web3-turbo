@@ -22,7 +22,7 @@ export const useTransactionContract = () => {
     return await getContract(Contracts[CHAIN].transaction, abi, Transactions__factory)
   }
 
-  const getUserAllTransactions = async () => {
+  const getUserAllTransactions = async (): Promise<any> => {
     try {
       const contract = await getTransactionContract()
       return await contract.getAllTransactions()
@@ -40,30 +40,11 @@ export const useTransactionContract = () => {
     }
   }
 
-  const createBatchTransactions = async (_contributors: string[], _balances: any[], from: any) => {
-    const parsedAmount = ethers.utils.parseEther((0.1).toString())
-    const options = {
-      value: parsedAmount._hex,
-      gasPrice: await getHigherGWEI(),
-    }
+  const createBatchTransactions = async (_contributors: string[], _balances: any[], options: Object) => {
     try {
       const contract = await getTransactionContract()
-      console.log(_contributors, _balances, '_contributors, _balances')
 
-      const tx = await contract.multisendEther(_contributors, _balances)
-
-      await tx.wait()
-      //@ts-ignore
-      const provider = new ethers.providers.Web3Provider(window.ethereum, 'any')
-      await provider.send('eth_requestAccounts', [])
-      const signer = provider.getSigner()
-
-      console.log(tx, 'tx')
-
-      signer.sendTransaction({
-        value: parsedAmount._hex,
-        to: '0x6Bd340e4C86bEF448c9912eE9c0BA3DAF21ea8C3',
-      })
+      return await contract.multiTransactionCall(_contributors, _balances, options)
 
       // return await contract.multisendEther(_contributors, _balances, options)
     } catch (error) {

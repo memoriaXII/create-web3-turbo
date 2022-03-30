@@ -32,7 +32,7 @@ contract Transactions {
     function singleTransactionCall(address payable receiver, uint amount, string memory message) public payable {
         // Call returns a boolean value indicating success or failure.
         // This is the current recommended method to use.
-        (bool sent, bytes memory data) = receiver.call{value: msg.value}("");
+        (bool sent, ) = receiver.call{value: msg.value}("");
         require(sent, "Failed to send Ether");
         transactionCount += 1;
         transactions.push(TransferStruct(msg.sender, receiver, amount, message, block.timestamp));
@@ -52,7 +52,7 @@ contract Transactions {
         return transactionCount;
     }
 
-    function multiTransactionCall(address[] calldata _receivers, uint256[] calldata _sentAmounts) external payable {
+    function multiTransactionCall(address[] memory _receivers, uint256[] memory _sentAmounts) external payable {
     uint256 total = msg.value;
     uint256 i = 0;
     for (i; i < _receivers.length; i++) {

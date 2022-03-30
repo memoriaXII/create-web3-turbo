@@ -1,6 +1,6 @@
-# web3-typescript-fullstack
+# Konomi Transaction Fullstack ( Localhost:8545 )
 
-( Localhost:8545 )
+https://user-images.githubusercontent.com/56249189/160244513-423eec2d-f6aa-4e17-bbfe-61e4a73cb1ff.mp4
 
 This project demonstrates single transaction and batch transaction use case. It comes with a transaction and batch transaction solidity contract, a reactjs front-end to interact with transaction contract, a backend server to subscribe event and continue listen using ether.js websocket api
 
@@ -58,7 +58,13 @@ npx hardhat help
 npx hardhat run --network localhost contract-scripts/deploy.js
 ```
 
-### Backend
+### Backend (Proxy with front end)
+
+```shell
+api 1: lastEvent API
+api 2: allEvent API
+api 3: blockEvent API
+```
 
 ```shell
 node backend/server.js
@@ -95,5 +101,3 @@ Smart-contract: Solidity, ethers, hardhat
 ### Reference
 
 1. Web3React: https://hackmd.io/Ykpp1MWLTjixIZG2ZJEShA
-
-# web3-typescript-fullstack
