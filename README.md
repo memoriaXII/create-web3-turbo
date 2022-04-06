@@ -1,4 +1,4 @@
-# Transaction Fullstack ( Localhost:8545 )
+# Batch Transaction Fullstack ( Localhost:8545 )
 
 This project demonstrates single transaction and batch transaction use case. It comes with a transaction and batch transaction solidity contract, a reactjs front-end to interact with transaction contract, a backend server to subscribe event and continue listen using ether.js websocket api
 
