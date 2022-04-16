@@ -1,0 +1,112 @@
+.formGroup {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.formLabel {
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+  color: #121223;
+  margin-bottom: 11px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.formInputCont {
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #EAEAF1;
+
+  &.focused {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.formGroupDates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.formInput {
+  width: 100%;
+  height: 50px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.usdPrice {
+  min-width: 130px;
+  height: 50px;
+  border-left: 1px solid #EAEAF1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(0, 0, 0, .4);
+}
+
+.select {
+  margin: 2px;
+  width: 140px !important;
+  outline: none !important;
+  height: 44px !important;
+  border-radius: 8px !important;
+  border: none !important;
+  box-sizing: border-box !important;
+  font-size: 16px !important;
+  padding-right: 12px !important;
+  background-color: #FAFAFB;
+  box-shadow: none !important;
+}
+
+.selectedToken,
+.token {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+.token {
+  width: 138px;
+  padding: 5px 15px;
+
+  &:hover {
+    background-color: #EAEAF1;
+  }
+}
+
+.tokenIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.tokenSymbol {
+  margin-left: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+  color: #121223;
+}
+
+@media only screen and (max-width: 600px) {
+  .formGroupDates {
+    display: block;
+  }
+}
