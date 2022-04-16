@@ -78,14 +78,14 @@ Subscribe event listener screenshot ( terminal )
 ### Frontend
 
 ```shell
-yarn start
+yarn dev ( vite )
 ```
 
 ### Skillsets
 
 ```shell
 
-Front-end : React.js, Typescript, Redux, Redux-thunk, custom webpack, ether.js, web3.js, scss
+Front-end : React.js, Typescript, Redux, Redux-thunk, vite, rollup, ether.js, web3.js, scss, 
 Back-end : Express, Node.js
 Smart-contract: Solidity, ethers, hardhat
 
