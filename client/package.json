@@ -176,7 +176,7 @@
     "ua-parser-js": "^0.7.28",
     "use-count-up": "^2.2.5",
     "use-resize-observer": "^8.0.0",
-    "vite": "^2.9.0",
+    "vite": "^2.9.13",
     "vite-plugin-commonjs-externals": "^0.1.1",
     "vite-tsconfig-paths": "^3.4.1",
     "wcag-contrast": "^3.0.0",
