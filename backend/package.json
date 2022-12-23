@@ -20,7 +20,7 @@
     "formidable": "^1.2.2",
     "google-auth-library": "^6.1.4",
     "http-errors": "^1.8.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.20",
     "morgan": "^1.10.0",
     "nanoid": "^3.1.20",
