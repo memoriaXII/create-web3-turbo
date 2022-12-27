@@ -1,0 +1,80 @@
+{
+  "version": "0.0.1",
+  "homepage": "",
+  "files": [
+    "contracts",
+    "build",
+    "scripts"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install",
+    "precompile": "yarn clean",
+    "pretest": "yarn compile",
+    "clean": "rimraf ./build/",
+    "build": "tsc -p tsconfig.build.json",
+    "compile": "npx hardhat compile",
+    "start": "npx hardhat node",
+    "console": "npx hardhat console --network",
+    "flatten": "npx hardhat flatten",
+    "lint": "yarn prettier --check **/*",
+    "lint:fix": "yarn prettier --write **/*",
+    "test": "npx hardhat coverage --testfiles \"test/*.ts\" --solcoverjs .solcover.js",
+    "test-specific": "mocha -g"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^2.1.8",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/hardhat-upgrades": "^1.9.0",
+    "@typechain/ethers-v5": "^7.0.1",
+    "@typechain/hardhat": "^2.1.2",
+    "@types/chai": "^4.2.19",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "chai": "^4.3.4",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.30.0",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.4.1",
+    "hardhat": "^2.8.4",
+    "hardhat-abi-exporter": "^2.3.1",
+    "hardhat-contract-sizer": "^2.6.1",
+    "hardhat-gas-reporter": "^1.0.4",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.0.0",
+    "mocha": "^9.2.0",
+    "prettier": "2.3.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.13",
+    "solhint": "^3.3.6",
+    "solhint-plugin-prettier": "^0.0.5",
+    "solidity-coverage": "^0.7.17",
+    "ts-generator": "^0.1.1",
+    "ts-node": "^10.0.0",
+    "typechain": "^5.0.0",
+    "typescript": "^4.3.5",
+    "yarn-upgrade-all": "^0.5.4"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.sol": [
+      "solhint -c .solhint.json",
+      "prettier --write"
+    ],
+    "*.md": "prettier --write"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.5.1",
+    "@openzeppelin/contracts": "^4.7.3",
+    "@openzeppelin/contracts-upgradeable": "^4.7.3",
+    "eslint-utils": "^3.0.0"
+  }
+}

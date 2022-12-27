@@ -1,0 +1,32 @@
+{
+  "RED-1": {
+    "description": "insufficient balance"
+  },
+  "RED-2": {
+    "description": "Invalid mode"
+  },
+  "RED-3": {
+    "description": "Denominator cannot be zero"
+  },
+  "RED-4": {
+    "description": "Caller is not allowed to open red packet"
+  },
+  "RED-5": {
+    "description": "Red packet Balance too low"
+  },
+  "RED-6": {
+    "description": "Caller is not the creator of the red packet"
+  },
+  "RED-7": {
+    "description": "Red packet has no remaining balance"
+  },
+  "RED-8": {
+    "description": "Caller has already claimed the red packet"
+  },
+  "RED-9": {
+    "description": "Hasn't reached the withdraw date yet"
+  },
+  "RED-10": {
+    "description": "Red packet claimed period has been reached"
+  }
+}
