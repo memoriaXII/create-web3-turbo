@@ -1,7 +1,6 @@
 import { ethers } from 'hardhat';
-import { deployUpgradeableContract } from './util';
+import { deployContract, deployUpgradeableContract } from './util';
 
-const erc20Addr = '0x862BC9Bd9265980feA5E69308A98cCB31BeA8d4D';
 async function main() {
   try {
     const faucet = {
@@ -9,13 +8,16 @@ async function main() {
       frequency: 1, //will allow people to request funds every block (so essentially every ~5s)
     };
     const [deployer] = await ethers.getSigners();
+    const ERC20 = await deployContract('ERC20Token', ['token', 'COO'], true);
+    console.log(`Deploying contracts with account: ${deployer.address}`);
+    console.log(`Test ERC20 address:${ERC20.address}`);
     const tokenFaucet = await deployUpgradeableContract(deployer, 'TokenFaucet', [
-      '0x862BC9Bd9265980feA5E69308A98cCB31BeA8d4D',
+      ERC20.address,
       faucet.amount,
       faucet.frequency,
     ]);
     console.log(`Faucet address:${tokenFaucet.address}`);
-    const erc20Token = await ethers.getContractAt('ERC20Token', erc20Addr);
+    const erc20Token = await ethers.getContractAt('ERC20Token', ERC20.address);
     const connected = tokenFaucet.connect(deployer);
     const totalAmount = await erc20Token.balanceOf(deployer.address);
     await erc20Token.approve(tokenFaucet.address, totalAmount);
@@ -28,6 +30,5 @@ async function main() {
     process.exit(1);
   }
 }
-//faucet: 0xDCFc55CE79D6715B4D63388F02D2121e6f9E0487
 
 main();
