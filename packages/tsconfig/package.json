@@ -2,8 +2,12 @@
   "name": "tsconfig",
   "version": "0.0.0",
   "private": true,
-  "license": "MIT",
+  "files": [
+    "base.json",
+    "react-cra.json",
+    "react-library.json"
+  ],
   "publishConfig": {
-    "access": "public"
-  }
+		"access": "public"
+	}
 }

@@ -23,6 +23,9 @@
     "wagmi": "^0.6.4"
   },
   "devDependencies": {
+    "ts-config": "*",
+    "eslint-config-custom": "*",
+    "prettier-config": "*",
     "@types/node": "18.7.13",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
