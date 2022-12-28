@@ -35,13 +35,10 @@ This boilerplate contains a modern stack for building Web3 apps:
 
 ## Get started
 
-> Clone/Fork this bad boy 🧙‍♀️:
 
 ```
 git clone https://github.com/memoriaXII/turborepo-next-solidity-advance.git
 ```
-
-> ⛑ Install:
 
 ```
 cd turborepo-next-solidity-advance
