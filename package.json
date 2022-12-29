@@ -14,7 +14,36 @@
     "codegen": "turbo run codegen",
     "prettier": "prettier --check \"**/*.{ts,tsx,md}\"",
     "prettier:fix": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "turbo run storybook",
+    "build-storybook": "turbo run build-storybook"
+  },
+  "turbo": {
+    "pipeline": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "dist/**",
+          ".next/**"
+        ]
+      },
+      "lint": {
+        "outputs": []
+      },
+      "dev": {
+        "cache": false
+      },
+      "storybook": {
+        "cache": false
+      },
+      "build-storybook": {
+        "outputs": [
+          "storybook-static/**"
+        ]
+      }
+    }
   },
   "devDependencies": {
     "husky": "^8.0.2",
@@ -22,6 +51,7 @@
     "turbo": "latest"
   },
   "engines": {
+    "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
   "packageManager": "yarn@1.22.19"
