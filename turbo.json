@@ -5,10 +5,19 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
-    "lint": { "outputs": [] },
-    "typecheck": { "outputs": [] },
-    "codegen": { "outputs": [] },
-    "test": { "outputs": [] },
-    "dev": { "cache": false }
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    },
+    "compile": { "cache": false },
+    "node": { "cache": false },
+    "storybook": {
+      "cache": false
+    },
+    "build-storybook": {
+      "outputs": ["storybook-static/**"]
+    }
   }
 }
