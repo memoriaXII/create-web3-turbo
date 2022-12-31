@@ -11,7 +11,9 @@
     "dev": {
       "cache": false
     },
-    "compile": { "cache": false },
+    "compile": {
+      "cache": false
+    },
     "node": { "cache": false },
     "storybook": {
       "cache": false

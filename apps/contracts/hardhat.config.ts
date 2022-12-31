@@ -12,7 +12,7 @@ import { resolve } from 'path';
 import '@openzeppelin/hardhat-upgrades';
 import 'hardhat-contract-sizer';
 
-dotenvConfig({ path: resolve(__dirname, './.env') });
+dotenvConfig({ path: resolve(__dirname, '../../.env') });
 
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || '';
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
@@ -55,9 +55,6 @@ const config: HardhatUserConfig = {
       },
     ],
   },
-  // etherscan: {
-  //   apiKey: POLYSCAN_API_KEY,
-  // },
   gasReporter: {
     enabled: process.env.REPORT_GAS ? true : false,
   },

@@ -1,5 +1,5 @@
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-import Image from "next/image";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import Image from 'next/image';
 
 export const CustomConnect = () => {
   return (
@@ -11,25 +11,22 @@ export const CustomConnect = () => {
         openChainModal,
         openConnectModal,
         authenticationStatus,
-        mounted,
+        mounted
       }) => {
         // Note: If your app doesn't use authentication, you
         // can remove all 'authenticationStatus' checks
-        const ready = mounted && authenticationStatus !== "loading";
+        const ready = mounted && authenticationStatus !== 'loading';
         const connected =
-          ready &&
-          account &&
-          chain &&
-          (!authenticationStatus || authenticationStatus === "authenticated");
+          ready && account && chain && (!authenticationStatus || authenticationStatus === 'authenticated');
         return (
           <div
             {...(!ready && {
-              "aria-hidden": true,
+              'aria-hidden': true,
               style: {
                 opacity: 0,
-                pointerEvents: "none",
-                userSelect: "none",
-              },
+                pointerEvents: 'none',
+                userSelect: 'none'
+              }
             })}
           >
             {(() => {
@@ -48,10 +45,10 @@ export const CustomConnect = () => {
                 );
               }
               return (
-                <div style={{ display: "flex", gap: 12 }}>
+                <div style={{ display: 'flex', gap: 12 }}>
                   <button
                     onClick={openChainModal}
-                    style={{ display: "flex", alignItems: "center" }}
+                    style={{ display: 'flex', alignItems: 'center' }}
                     type="button"
                   >
                     {chain.hasIcon && (
@@ -61,13 +58,13 @@ export const CustomConnect = () => {
                           width: 12,
                           height: 12,
                           borderRadius: 999,
-                          overflow: "hidden",
-                          marginRight: 4,
+                          overflow: 'hidden',
+                          marginRight: 4
                         }}
                       >
                         {chain.iconUrl && (
                           <Image
-                            alt={chain.name ?? "Chain icon"}
+                            alt={chain.name ?? 'Chain icon'}
                             src={chain.iconUrl}
                             width={12}
                             height={12}
@@ -79,9 +76,7 @@ export const CustomConnect = () => {
                   </button>
                   <button onClick={openAccountModal} type="button">
                     {account.displayName}
-                    {account.displayBalance
-                      ? ` (${account.displayBalance})`
-                      : ""}
+                    {account.displayBalance ? ` (${account.displayBalance})` : ''}
                   </button>
                 </div>
               );

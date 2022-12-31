@@ -1,0 +1,12 @@
+{
+  "name": "lib",
+  "version": "0.0.0",
+  "main": "./dist/index",
+  "types": "./dist/index",
+  "scripts": {
+    "build": "tsc --build --force tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  }
+}
