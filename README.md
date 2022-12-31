@@ -40,8 +40,27 @@ cd turborepo-next-solidity-advance
 yarn install
 ```
 
-> Run both the hardhat node and the frontend
+
+### Front-end
 
 ```
 yarn dev
 ```
+
+### Smart Contracts 
+
+```
+yarn hardhat:compile
+yarn hardhat:node
+yarn hardhat:test
+```
+
+### Story Book
+
+```
+yarn storybook
+yarn build-storybook
+```
+
+
+
