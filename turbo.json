@@ -12,6 +12,9 @@
       "cache": false,
       "env": ["COINMARKETCAP_API_KEY"]
     },
+    "sol:test": {
+      "outputs": ["coverage/**"]
+    },
     "compile": {
       "cache": false
     },

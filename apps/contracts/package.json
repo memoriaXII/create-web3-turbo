@@ -1,4 +1,4 @@
-{ 
+{
   "name": "contracts",
   "version": "0.0.1",
   "homepage": "",
@@ -23,7 +23,7 @@
     "flatten": "npx hardhat flatten",
     "lint": "yarn prettier --check **/*",
     "lint:fix": "yarn prettier --write **/*",
-    "test": "npx hardhat coverage --testfiles \"test/*.ts\" --solcoverjs .solcover.js",
+    "sol:test": "npx hardhat coverage --testfiles \"test/*.ts\" --solcoverjs .solcover.js",
     "test-specific": "mocha -g"
   },
   "devDependencies": {
