@@ -9,7 +9,8 @@
       "outputs": []
     },
     "dev": {
-      "cache": false
+      "cache": false,
+      "env": ["COINMARKETCAP_API_KEY"]
     },
     "compile": {
       "cache": false

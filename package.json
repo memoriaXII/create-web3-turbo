@@ -1,4 +1,6 @@
 {
+  "name": "turborepo-web3-starter-kit",
+  "version": "0.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -17,17 +19,39 @@
     "build-storybook": "turbo run build-storybook",
     "clean": "turbo run clean && rm -rf node_modules",
     "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix --parallel",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
+    "esbuild": "^0.14.10",
+    "esbuild-jest": "^0.5.0",
+    "lint-staged": "^12.1.3",
     "husky": "^8.0.2",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "latest",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.7",
+    "jest-watch-typeahead": "^1.0.0",
+    "msw": "^0.36.3"
   },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=16"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@1.22.19",
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/ui/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  }
 }

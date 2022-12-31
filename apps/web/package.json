@@ -14,7 +14,7 @@
     "@typechain/ethers-v5": "^10.1.0",
     "autoprefixer": "^10.4.13",
     "ethers": "^5.7.0",
-    "next": "12.2.5",
+    "next": "^13.1.1",
     "postcss": "^8.4.20",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -23,14 +23,16 @@
     "wagmi": "^0.6.4"
   },
   "devDependencies": {
-    "ts-config": "*",
-    "eslint-config-custom": "*",
-    "prettier-config": "*",
     "@types/node": "18.7.13",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "eslint": "8.23.0",
+    "eslint-config-custom": "*",
     "eslint-config-next": "12.2.5",
+    "prettier-config": "*",
+    "tsconfig": "*",
+    "tailwind-config": "*",
+    "lib": "*",
     "typescript": "4.8.2"
   }
 }

@@ -4,10 +4,7 @@
   "private": true,
   "files": [
     "base.json",
-    "react-cra.json",
+    "nextjs.json",
     "react-library.json"
-  ],
-  "publishConfig": {
-		"access": "public"
-	}
+  ]
 }
