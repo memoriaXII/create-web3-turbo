@@ -17,7 +17,10 @@ export const CustomConnect = () => {
         // can remove all 'authenticationStatus' checks
         const ready = mounted && authenticationStatus !== 'loading';
         const connected =
-          ready && account && chain && (!authenticationStatus || authenticationStatus === 'authenticated');
+          ready &&
+          account &&
+          chain &&
+          (!authenticationStatus || authenticationStatus === 'authenticated');
         return (
           <div
             {...(!ready && {
@@ -27,8 +30,7 @@ export const CustomConnect = () => {
                 pointerEvents: 'none',
                 userSelect: 'none'
               }
-            })}
-          >
+            })}>
             {(() => {
               if (!connected) {
                 return (
@@ -49,8 +51,7 @@ export const CustomConnect = () => {
                   <button
                     onClick={openChainModal}
                     style={{ display: 'flex', alignItems: 'center' }}
-                    type="button"
-                  >
+                    type="button">
                     {chain.hasIcon && (
                       <div
                         style={{
@@ -60,8 +61,7 @@ export const CustomConnect = () => {
                           borderRadius: 999,
                           overflow: 'hidden',
                           marginRight: 4
-                        }}
-                      >
+                        }}>
                         {chain.iconUrl && (
                           <Image
                             alt={chain.name ?? 'Chain icon'}
