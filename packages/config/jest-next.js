@@ -6,8 +6,8 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
   transform: {
     '^.+\\.tsx?$': 'esbuild-jest',
-    '^.+\\.jsx?$': 'esbuild-jest',
+    '^.+\\.jsx?$': 'esbuild-jest'
   },
   coveragePathIgnorePatterns: [],
-  coverageThreshold: null,
-}
+  coverageThreshold: null
+};
