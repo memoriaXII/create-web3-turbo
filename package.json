@@ -20,9 +20,11 @@
     "build-storybook": "turbo run build-storybook",
     "clean": "turbo run clean && rm -rf node_modules",
     "lint": "turbo run lint",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "changeset": "changeset"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.22.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
