@@ -30,8 +30,8 @@
     "eslint-config-custom": "*",
     "eslint-config-next": "12.2.5",
     "prettier-config": "*",
+    "config": "*",
     "tsconfig": "*",
-    "tailwind-config": "*",
     "lib": "*",
     "typescript": "4.8.2"
   }
