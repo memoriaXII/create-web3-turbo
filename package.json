@@ -2,6 +2,24 @@
   "name": "turborepo-web3-starter-kit",
   "version": "0.0.0",
   "private": true,
+  "author": "memoriaXII",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/memoriaXII/turborepo-web3-starter-kit/issues"
+  },
+  "homepage": "https://github.com/memoriaXII/turborepo-web3-starter-kit#readme",
+  "keywords": [
+    "react",
+    "typescript",
+    "smart-contracts",
+    "solidity",
+    "ethereum-dapp",
+    "hardhat",
+    "ethersjs",
+    "tailwindcss",
+    "turborepo",
+    "wagmi"
+  ],
   "workspaces": [
     "apps/*",
     "packages/*"
