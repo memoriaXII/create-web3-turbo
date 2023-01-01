@@ -10,7 +10,7 @@
     "typechain": "typechain --out-dir src/config/abi/types --target=ethers-v5 \"src/config/abi/*.json\""
   },
   "dependencies": {
-    "@rainbow-me/rainbowkit": "^0.5.0",
+    "@rainbow-me/rainbowkit": "^0.8.1",
     "@typechain/ethers-v5": "^10.1.0",
     "ethers": "^5.7.0",
     "next": "^13.1.1",
@@ -23,13 +23,13 @@
     "@types/node": "18.7.13",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "config": "*",
     "eslint": "8.23.0",
     "eslint-config-custom": "*",
     "eslint-config-next": "12.2.5",
-    "prettier-config": "*",
-    "config": "*",
-    "tsconfig": "*",
     "lib": "*",
+    "prettier-config": "*",
+    "tsconfig": "*",
     "typescript": "4.8.2"
   }
 }
