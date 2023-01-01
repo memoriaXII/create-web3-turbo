@@ -16,8 +16,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const { chains } = configureChains([goerli], [publicProvider()]);
 
-  console.log(chains2);
-
   return (
     <WagmiProvider>
       <RainbowKitProvider chains={chains}>
