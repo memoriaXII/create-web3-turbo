@@ -11,8 +11,10 @@ It uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It in
 - `web`: A [Next.js](https://nextjs.org) based app with typescript,wagmi,rainbowkit,ether.js
 - `contracts`: hardhat,typescript,chai,ethers
 - `storybook`: storybook
-- `core`: typescript,chai,ethers
-- `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-server`)
+- `api`: basic skeleton back-end structure with typescript
+- `ui`: a stub React component library shared by both web and docs applications
+- `lib`: sdk library
+- `config`: config configurations
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 
