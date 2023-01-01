@@ -1,55 +1,65 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
-  },
-  settings: {
-    react: {
-      version: 'detect'
-    },
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.ts', '.tsx']
-      }
-    },
-    'import/extensions': ['.js', '.ts', '.tsx']
+    node: true
   },
   extends: [
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
+    'next',
+    'airbnb',
     'airbnb-typescript',
-    'plugin:prettier/recommended'
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'prettier'
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
-    ecmaFeatures: {
-      jsx: true
+  plugins: ['@typescript-eslint', 'import'],
+  settings: {
+    next: {
+      rootDir: ['apps/*/', 'packages/*/']
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx']
+    },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+        project: ['apps/*/tsconfig.json']
+      }
     }
   },
-  plugins: ['import', 'react', '@typescript-eslint', 'prettier'],
-  ignorePatterns: ['src/**/*.svg', '**/node_modules/**'],
   rules: {
-    'consistent-return': 0,
-    'function-paren-newline': 0,
-    'object-curly-newline': 0,
-    'react/prop-types': 0,
-    'react/jsx-filename-extension': 0,
-    'react/react-in-jsx-scope': 0,
-    'react/jsx-one-expression-per-line': 0,
-    'react/jsx-props-no-spreading': 0,
-    'react/jsx-closing-bracket-location': 0,
-    'react/no-unescaped-entities': 0,
-    'import/prefer-default-export': 0,
-    'implicit-arrow-linebreak': 0,
-    'jest/no-mocks-import': 0,
-    'prettier/prettier': 'error',
-    'no-unused-vars': ['error', { vars: 'all', args: 'none', ignoreRestSiblings: true }],
-    '@typescript-eslint/comma-dangle': 0,
-    '@typescript-eslint/no-use-before-define': 0,
-    '@typescript-eslint/indent': 0
-  }
+    // react
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function'
+      }
+    ],
+
+    // next
+    '@next/next/no-html-link-for-pages': 'off'
+  },
+  overrides: [
+    {
+      // 3) Now we enable eslint-plugin-testing-library rules or preset only for matching files!
+      env: {
+        jest: true
+      },
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react', 'plugin:jest/recommended'],
+      rules: {
+        'import/no-extraneous-dependencies': ['off', { devDependencies: ['**/?(*.)+(spec|test).[jt]s?(x)'] }]
+      }
+    }
+  ],
+  ignorePatterns: [
+    '**/*.js',
+    '**/*.json',
+    'node_modules',
+    'public',
+    'styles',
+    '.next',
+    'coverage',
+    'dist',
+    '.turbo'
+  ]
 };

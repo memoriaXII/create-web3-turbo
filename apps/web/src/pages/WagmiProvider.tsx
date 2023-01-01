@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { ethers, providers } from 'ethers';
 import {
   configureChains,
@@ -5,13 +6,8 @@ import {
   WagmiConfig,
   defaultChains as WAGMI_SUPPORTED_CHAINS
 } from 'wagmi';
-import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet';
-import { InjectedConnector } from 'wagmi/connectors/injected';
-import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { publicProvider } from 'wagmi/providers/public';
 
-import { PLATFORM } from 'config/setting';
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
 
 type TProps = {
@@ -42,12 +38,10 @@ export const DEFAULT_CHAIN_RPC_LINK: { [key: number]: string } = {
   [SupportedChainId.GOERLI]: 'https://rpc.ankr.com/eth_goerli',
   [SupportedChainId.POLYGON]: 'https://polygon-rpc.com',
   [SupportedChainId.POLYGON_MUMBAI]: 'https://rpc-endpoints.superfluid.dev/mumbai',
-  [SupportedChainId.BSC]: 'https://bsc-dataseed.binance.org/',
-  [SupportedChainId.BSC_TESTNET]:
-    'https://speedy-nodes-nyc.moralis.io/dc678d041ec4263c972bc90f/bsc/testnet'
+  [SupportedChainId.BSC]: 'https://bsc-dataseed.binance.org/'
 };
 
-const WagmiProvider: React.FC<TProps> = ({ children }) => {
+const WagmiProvider: React.FC<TProps> = ({ children }: any) => {
   const supportedChains = [...WAGMI_SUPPORTED_CHAINS];
 
   const { chains, provider } = configureChains(supportedChains, [publicProvider()]);
@@ -56,7 +50,6 @@ const WagmiProvider: React.FC<TProps> = ({ children }) => {
     appName: 'My RainbowKit App',
     chains
   });
-
   const client = createClient({
     autoConnect: true,
     connectors,
@@ -72,6 +65,7 @@ const WagmiProvider: React.FC<TProps> = ({ children }) => {
         ].includes(chainId)
       ) {
         if (window.ethereum && window.ethereum.isMetaMask) {
+          // @ts-ignore
           return new ethers.providers.Web3Provider(window.ethereum, chainId);
         }
 
