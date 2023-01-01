@@ -12,10 +12,11 @@ It uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It in
 - `contracts`: hardhat,typescript,chai,ethers
 - `storybook`: storybook
 - `api`: basic skeleton back-end structure with typescript
-- `ui`: a stub React component library shared by both web and docs applications
-- `lib`: sdk library
-- `config`: config configurations
+- `ui`: a custom shared ui component library
+- `lib`: sdk library for core instances
+- `config`: lint and common config configurations
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `husky`: lint staged pre-commit check
 
 
 ### Stack 
@@ -38,7 +39,7 @@ git clone https://github.com/memoriaXII/turborepo-web3-starter-kit.git
 ```
 
 ```
-cd turborepo-next-solidity-advance
+cd turborepo-web3-starter-kit
 yarn install
 ```
 
