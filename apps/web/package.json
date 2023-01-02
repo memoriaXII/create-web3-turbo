@@ -25,10 +25,8 @@
     "@types/react-dom": "18.0.6",
     "config": "*",
     "eslint": "8.23.0",
-    "eslint-config-custom": "*",
     "eslint-config-next": "12.2.5",
     "lib": "*",
-    "prettier-config": "*",
     "tsconfig": "*",
     "typescript": "4.8.2"
   }
