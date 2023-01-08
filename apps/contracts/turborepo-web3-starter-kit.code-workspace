@@ -1,0 +1,21 @@
+{
+  "folders": [
+	{
+		"name": "✨ turborepo-web3-starter-kit",
+		"path": "../.."
+	},
+	{
+		"name": "🚀 contracts",
+		"path": "."
+	},
+	{
+		"name": "🚀 storybook",
+		"path": "../storybook"
+	},
+	{
+		"name": "🚀 web",
+		"path": "../web"
+	}
+],
+  "settings": {}
+}
