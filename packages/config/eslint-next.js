@@ -47,7 +47,6 @@ module.exports = {
     'react/no-unescaped-entities': 0,
     'import/prefer-default-export': 0,
     'implicit-arrow-linebreak': 0,
-    'jest/no-mocks-import': 0,
     'prettier/prettier': 'error',
     'no-unused-vars': ['error', { vars: 'all', args: 'none', ignoreRestSiblings: true }],
     '@typescript-eslint/comma-dangle': 0,
@@ -58,12 +57,8 @@ module.exports = {
   },
   overrides: [
     {
-      // 3) Now we enable eslint-plugin-testing-library rules or preset only for matching files!
-      env: {
-        jest: true
-      },
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-      extends: ['plugin:testing-library/react', 'plugin:jest/recommended'],
+      extends: ['plugin:testing-library/react'],
       rules: {
         'import/no-extraneous-dependencies': ['off', { devDependencies: ['**/?(*.)+(spec|test).[jt]s?(x)'] }]
       }

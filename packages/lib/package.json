@@ -10,7 +10,6 @@
     "@nomiclabs/hardhat-ethers": "^2.0.6",
     "@typechain/ethers-v5": "^10.1.0",
     "@types/chai": "^4.3.1",
-    "@types/jest": "^28.1.1",
     "@types/node": "^15.6.1",
     "@types/set-interval-async": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
@@ -28,8 +27,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "ethers": "5.6.9",
     "hardhat": "^2.9.9",
-    "jest": "^28.1.1",
-    "ts-jest": "^28.0.4",
     "ts-node": "^10.8.1",
     "typechain": "^8.1.0",
     "typescript": "^4.7.3"
