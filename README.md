@@ -29,6 +29,11 @@ This starter kit contains:
 - [Typechain](https://github.com/dethcrypto/TypeChain) to keep those end-to-end types generated from ABIs
 - [Hardhat](https://hardhat.org/) Deploy && compile smart Contracts
 
+### NOTE: 
+I recommend the following extension to make it easy to switch among packages in your mono repo, as well as open multiple under a single workspace. It makes mono repos work well with the test explorer extension.
+
+link: https://marketplace.visualstudio.com/items?itemName=folke.vscode-monorepo-workspace
+
 
 ## Get started
 
