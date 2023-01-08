@@ -1,7 +1,6 @@
-# turborepo-web3-starter-kit
+# 📦 turborepo-web3-starter-kit
 
-
-## What's inside?
+[⚡ Dev.to Post](https://dev.to/zachilee/all-in-one-ethereum-dapp-monorepo-starter-kit-3fd7)
 
 This boilerplate is based on [Turborepo](https://github.com/vercel/turborepo).
 It uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
