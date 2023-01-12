@@ -68,10 +68,8 @@
       "eslint --cache --fix"
     ],
     "*.sol": [
-      "solhint -c .solhint.json",
-      "prettier --write"
-    ],
-    "*.md": "prettier --write"
+      "solhint -c .solhint.json"
+    ]
   },
   "dependencies": {
     "@chainlink/contracts": "^0.5.1",

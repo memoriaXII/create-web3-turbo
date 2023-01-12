@@ -9,6 +9,12 @@
       "dependsOn": ["^build"],
       "outputs": ["coverage/**"]
     },
+    "storybook": {
+      "cache": false
+    },
+    "build-storybook": {
+      "outputs": ["storybook-static/**"]
+    },
     "lint": {
       "outputs": []
     },
@@ -22,12 +28,6 @@
     "compile": {
       "cache": false
     },
-    "node": { "cache": false },
-    "storybook": {
-      "cache": false
-    },
-    "build-storybook": {
-      "outputs": ["storybook-static/**"]
-    }
+    "start": { "cache": false }
   }
 }
