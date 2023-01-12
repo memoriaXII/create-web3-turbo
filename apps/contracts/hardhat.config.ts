@@ -1,5 +1,4 @@
 import 'solidity-coverage';
-
 import '@nomiclabs/hardhat-waffle';
 import '@nomiclabs/hardhat-ethers';
 import { HardhatUserConfig } from 'hardhat/types';
@@ -14,10 +13,10 @@ import 'hardhat-contract-sizer';
 
 dotenvConfig({ path: resolve(__dirname, './.env') });
 
-const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || '';
+// const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || '';
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY || 'privatKey';
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || '';
+// const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || '';
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
@@ -56,7 +55,9 @@ const config: HardhatUserConfig = {
     ],
   },
   gasReporter: {
-    enabled: process.env.REPORT_GAS ? true : false,
+    currency: 'USD',
+    gasPrice: 100,
+    enabled: process.env.REPORT_GAS == 'true' ?? false,
   },
   typechain: {
     outDir: 'typechain',

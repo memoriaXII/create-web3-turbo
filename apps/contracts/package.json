@@ -24,7 +24,8 @@
     "lint": "yarn prettier --check **/*",
     "lint:fix": "yarn prettier --write **/*",
     "sol:test": "npx hardhat coverage --testfiles \"test/*.ts\" --solcoverjs .solcover.js",
-    "test-specific": "mocha -g"
+    "test-specific": "mocha -g",
+    "test:gas": "UPDATE_SNAPSHOT=1 yarn test --grep gas"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
@@ -36,8 +37,6 @@
     "@types/chai": "^4.2.19",
     "@types/mocha": "^8.2.2",
     "@types/node": "^16.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.28.2",
-    "@typescript-eslint/parser": "^4.28.2",
     "chai": "^4.3.4",
     "dotenv": "^10.0.0",
     "eslint": "^7.30.0",
@@ -57,15 +56,12 @@
     "solidity-coverage": "^0.7.17",
     "ts-generator": "^0.1.1",
     "ts-node": "^10.0.0",
-    "typechain": "^5.0.0",
-    "typescript": "^4.3.5",
+    "typechain": "^8.1.0",
+    "typescript": "^4.8.4",
+    "ts-config": "*",
     "yarn-upgrade-all": "^0.5.4"
   },
   "lint-staged": {
-    "*.ts": [
-      "eslint --cache --fix",
-      "prettier --write"
-    ],
     "*.sol": [
       "solhint -c .solhint.json",
       "prettier --write"
