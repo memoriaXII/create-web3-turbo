@@ -4,11 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "files": [
+    "eslint-contract,js",
     "eslint-next.js",
     "prettier-next.js"
   ],
   "dependencies": {
     "prettier": "^2.8.1",
+    "eslint": "^7.30.0",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "eslint-config-airbnb": "^18.2.1",

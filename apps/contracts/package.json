@@ -59,10 +59,14 @@
     "ts-node": "^10.0.0",
     "typechain": "^8.1.0",
     "typescript": "^4.8.4",
+    "config": "*",
     "ts-config": "*",
     "yarn-upgrade-all": "^0.5.4"
   },
   "lint-staged": {
+    "*.ts": [
+      "eslint --cache --fix"
+    ],
     "*.sol": [
       "solhint -c .solhint.json",
       "prettier --write"

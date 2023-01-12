@@ -25,9 +25,11 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       chainId: 31337,
+      allowUnlimitedContractSize: true,
     },
     localhost: {
       chainId: 31337,
+      allowUnlimitedContractSize: true,
     },
     goerli: {
       url: GOERLI_RPC_URL,
@@ -55,9 +57,10 @@ const config: HardhatUserConfig = {
     ],
   },
   gasReporter: {
+    enabled: true,
     currency: 'USD',
-    gasPrice: 100,
-    enabled: process.env.REPORT_GAS == 'true' ?? false,
+    outputFile: 'gas-report.txt',
+    noColors: true,
   },
   typechain: {
     outDir: 'typechain',
