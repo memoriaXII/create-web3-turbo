@@ -1,6 +1,6 @@
-import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import { midnightTheme, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
-import 'styles/globals.css';
+import 'styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import { configureChains } from 'wagmi';
@@ -18,7 +18,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <WagmiProvider>
-      <RainbowKitProvider chains={chains}>
+      <RainbowKitProvider chains={chains} theme={midnightTheme()} coolMode>
         <Component {...pageProps} />
       </RainbowKitProvider>
     </WagmiProvider>
