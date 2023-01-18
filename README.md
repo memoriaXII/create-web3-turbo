@@ -1,4 +1,4 @@
-# ⚡ Turborepo Web3 Starter Kit
+# 📦  Turborepo Web3 Starter Kit
 
 <img width="1254" alt="Screenshot 2023-01-18 at 5 25 01 PM" src="https://user-images.githubusercontent.com/56249189/213133544-bcc0dae1-9146-49c2-b2ab-263d14cb671e.png">
 
