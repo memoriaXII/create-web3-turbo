@@ -1,0 +1,9 @@
+node_modules/
+build/
+public/
+craco.config.js
+tailwind.config.js
+postcss.config.js
+prettier.config.js
+svgr.config.js
+.eslintrc.js
