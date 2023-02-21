@@ -1,7 +1,6 @@
-# 📦  Turborepo Web3 Starter Kit
+# 📦 Turborepo Web3 Starter Kit
 
 <img width="1254" alt="Screenshot 2023-01-18 at 5 25 01 PM" src="https://user-images.githubusercontent.com/56249189/213133544-bcc0dae1-9146-49c2-b2ab-263d14cb671e.png">
-
 
 [⚡ Dev.to Post](https://dev.to/zachilee/all-in-one-ethereum-dapp-monorepo-starter-kit-3fd7)
 
@@ -13,15 +12,13 @@ It uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It in
 - `web`: A [Next.js](https://nextjs.org) based app with typescript,wagmi,rainbowkit,ether.js
 - `contracts`: hardhat,typescript,chai,ethers
 - `storybook`: storybook
-- `api`: basic skeleton back-end structure with typescript
 - `ui`: a custom shared ui component library
 - `lib`: sdk library for core instances
 - `config`: lint and common config configurations
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 - `husky`: lint staged pre-commit check
 
-
-### Stack 
+### Stack
 
 This starter kit contains:
 
@@ -32,14 +29,13 @@ This starter kit contains:
 - [Typechain](https://github.com/dethcrypto/TypeChain) to keep those end-to-end types generated from ABIs
 - [Hardhat](https://hardhat.org/) Deploy && compile smart Contracts
 
-### NOTE: 
+### NOTE:
+
 I recommend the following extension to make it easy to switch among packages in your mono repo, as well as open multiple under a single workspace. It makes mono repos work well with the test explorer extension.
 
 link: https://marketplace.visualstudio.com/items?itemName=folke.vscode-monorepo-workspace
 
-
 ## Get started
-
 
 ```
 git clone https://github.com/memoriaXII/turborepo-web3-starter-kit.git
@@ -50,14 +46,13 @@ cd turborepo-web3-starter-kit
 yarn install
 ```
 
-
 ### Front-end
 
 ```
 yarn dev
 ```
 
-### Smart Contracts 
+### Smart Contracts
 
 ```
 yarn hardhat:compile
@@ -96,6 +91,3 @@ To shutdown all running containers:
 # Stop all running containers
 docker kill $(docker ps -q) && docker rm $(docker ps -a -q)
 ```
-
-
-

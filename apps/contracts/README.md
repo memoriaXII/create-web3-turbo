@@ -1,4 +1,18 @@
-# solidity-prac-v1
+# 📦 contracts
+
+### Apps and Packages
+
+- `test`: contract instance integration tests
+- `contracts`: client contract core instances
+- `utils`: utils function methods
+
+### NOTE:
+
+I recommend the following extension to make it easy to switch among packages in your mono repo, as well as open multiple under a single workspace. It makes mono repos work well with the test explorer extension.
+
+link: https://marketplace.visualstudio.com/items?itemName=folke.vscode-monorepo-workspace
+
+## Get started
 
 ```bash
 # install dependencies
