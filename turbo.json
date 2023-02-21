@@ -5,10 +5,8 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
-    "test": {
-      "dependsOn": ["^build"],
-      "outputs": ["coverage/**"]
-    },
+    "test": {},
+    "generate": {},
     "storybook": {
       "cache": false
     },

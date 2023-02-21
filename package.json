@@ -39,7 +39,9 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
-    "changeset": "changeset"
+    "changeset": "changeset",
+    "test:contract-sdk": "turbo run test --filter=contracts",
+    "generate:contract-sdk": "turbo run generate --filter=contracts"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
