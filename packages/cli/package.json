@@ -1,0 +1,30 @@
+{
+  "name": "cli",
+  "license": "MIT",
+  "keywords": [],
+  "type": "module",
+  "exports": "./dist/index.js",
+  "engines": {
+    "node": ">=14.16"
+  },
+  "scripts": {
+    "typecheck": "tsc",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist .turbo node_modules",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "chalk": "5.2.0",
+    "commander": "^10.0.0",
+    "execa": "^7.0.0",
+    "fs-extra": "^11.1.0",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.1.4",
+    "ora": "6.1.2",
+    "sort-package-json": "^2.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
