@@ -1,27 +1,53 @@
-import { midnightTheme, RainbowKitProvider } from '@rainbow-me/rainbowkit';
-import '@rainbow-me/rainbowkit/styles.css';
+import { WagmiConfig, createClient, mainnet, configureChains } from 'wagmi';
+
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { publicProvider } from 'wagmi/providers/public';
+
+import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet';
+import { InjectedConnector } from 'wagmi/connectors/injected';
+import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
+import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import 'styles/globals.scss';
 import type { AppProps } from 'next/app';
-import { useEffect, useState } from 'react';
-import { configureChains } from 'wagmi';
-import { publicProvider } from 'wagmi/providers/public';
-import { goerli } from 'wagmi/chains';
-import WagmiProvider from './WagmiProvider';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const [mounted, setMounted] = useState(false);
+  const { chains, provider, webSocketProvider } = configureChains(
+    [mainnet],
+    [alchemyProvider({ apiKey: 'yourAlchemyApiKey' }), publicProvider()]
+  );
 
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
-
-  const { chains } = configureChains([goerli], [publicProvider()]);
-
+  // Set up client
+  const client = createClient({
+    autoConnect: true,
+    connectors: [
+      new MetaMaskConnector({ chains }),
+      new CoinbaseWalletConnector({
+        chains,
+        options: {
+          appName: 'wagmi'
+        }
+      }),
+      new WalletConnectConnector({
+        chains,
+        options: {
+          projectId: '...'
+        }
+      }),
+      new InjectedConnector({
+        chains,
+        options: {
+          name: 'Injected',
+          shimDisconnect: true
+        }
+      })
+    ],
+    provider,
+    webSocketProvider
+  });
   return (
-    <WagmiProvider>
-      <RainbowKitProvider chains={chains} theme={midnightTheme()} coolMode>
-        <Component {...pageProps} />
-      </RainbowKitProvider>
-    </WagmiProvider>
+    <WagmiConfig client={client}>
+      <Component {...pageProps} />
+    </WagmiConfig>
   );
 };
 

@@ -1,8 +1,14 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+/* eslint-disable react/button-has-type */
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from 'styles/Home.module.scss';
+
+import dynamic from 'next/dynamic';
+
+const ConnectButton = dynamic(() => import('../components/Button/ConnectButton'), {
+  ssr: false
+});
 
 const Home: NextPage = () => (
   <>
@@ -18,9 +24,7 @@ const Home: NextPage = () => (
           Get started by editing&nbsp;
           <code className={styles.code}>pages/index.js</code>
         </p>
-        <div>
-          <ConnectButton />
-        </div>
+        <ConnectButton />
       </div>
 
       <div className={styles.center}>
