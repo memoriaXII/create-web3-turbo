@@ -2,10 +2,16 @@
 
 <img width="1254" alt="Screenshot 2023-01-18 at 5 25 01 PM" src="https://user-images.githubusercontent.com/56249189/213133544-bcc0dae1-9146-49c2-b2ab-263d14cb671e.png">
 
-[⚡ Dev.to Post](https://dev.to/zachilee/all-in-one-ethereum-dapp-monorepo-starter-kit-3fd7)
-
 This boilerplate is based on [Turborepo](https://github.com/vercel/turborepo).
 It uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
+
+## Installation
+
+There are two ways of initializing an app using `create-web3-turbo` starter. You can either use this repository as a template or use Turbo's CLI to init your project:
+
+```bash
+npx create-turbo@latest -e https://github.com/memoriaXII/create-web3-turbo
+```
 
 ### Apps and Packages
 
@@ -17,6 +23,32 @@ It uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It in
 - `config`: lint and common config configurations
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 - `husky`: lint staged pre-commit check
+
+
+It uses [Turborepo](https://turborepo.org/) and contains:
+
+```
+.github
+  └─ pull_request_template
+  └─ workflows
+        └─ CI
+.vscode
+  └─ Recommended extensions and settings for VSCode users
+apps
+  ├─ contracts
+  |   
+  └─ web
+  |   
+  └─ storybook
+
+packages
+ ├─ config
+ |   └─ lint config
+ ├─ lib
+     └─ sdk library for core instances
+ └─ ui
+     └─ a custom shared ui component library
+```
 
 ### Stack
 
