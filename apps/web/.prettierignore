@@ -1,0 +1,6 @@
+node_modules
+.next
+.husky
+coverage
+.prettierignore
+.stylelintignore

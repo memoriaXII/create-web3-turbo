@@ -1,16 +1,18 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import classNames, { Argument } from 'classnames';
+import { ClassValue, clsx } from 'clsx';
+import { format as d3format } from 'd3-format';
 import { ethers } from 'ethers';
 import { twMerge } from 'tailwind-merge';
 
-const cn = (...classes: Argument[]) => twMerge(classNames(...classes));
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 const isContractAddress = (address: string) => ethers.utils.isAddress(address);
 
 const displayAddress = (
-  address: string = '',
-  startOffset: number = 4,
-  endOffset: number = 4
+  address = '',
+  startOffset = 6,
+  endOffset = 6
 ): string => {
   if (!address) return '--';
   if (!isContractAddress(address)) {
@@ -21,4 +23,31 @@ const displayAddress = (
   return `${address.slice(0, startOffset)}...${address.slice(-endOffset)}`;
 };
 
-export { cn, displayAddress };
+const formatNumberWithCommas = (value: string) => {
+  const numericValue = parseFloat(value.replace(/,/g, ''));
+  if (isNaN(numericValue)) {
+    return '';
+  }
+  const truncatedValue = Math.floor(numericValue * 100) / 100; // Truncate to 2 decimal places
+  const formattedValue = truncatedValue.toLocaleString();
+  return formattedValue;
+};
+
+const displayFloat = (
+  value: number,
+  decimals = 4,
+  isCurrency?: boolean,
+  isRoundUp = false
+): string => {
+  if (value === 0) return '$0.0';
+  const formattedValue = isRoundUp
+    ? value
+    : Math.floor(value * Math.pow(10, decimals)) / Math.pow(10, decimals);
+  return value === undefined
+    ? '--'
+    : isCurrency
+    ? `$${d3format(`,.${decimals}f`)(formattedValue)}`
+    : d3format(`,.${decimals}f`)(formattedValue);
+};
+
+export { cn, displayAddress, formatNumberWithCommas, displayFloat };
