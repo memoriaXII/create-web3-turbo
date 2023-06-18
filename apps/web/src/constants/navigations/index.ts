@@ -1,6 +1,5 @@
 enum Path {
   ROOT = '/',
-  BORROW = '/borrow',
   MARKETS = '/markets',
 }
 
@@ -13,8 +12,7 @@ export const config = {
 export const URL = 'https://example.com';
 
 export const navItems = [
-  { name: 'Earn', path: Path.ROOT },
-  { name: 'Borrow', path: Path.BORROW },
+  { name: 'Home', path: Path.ROOT },
   { name: 'Markets', path: Path.MARKETS },
 ];
 

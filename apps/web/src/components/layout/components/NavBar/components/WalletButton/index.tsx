@@ -63,8 +63,7 @@ export const WalletButton: React.FC = () => {
       </div>
     ) : (
       <>
-        <button
-          className='flex max-h-[54px] items-center justify-center overflow-hidden rounded-full bg-rv-gradient px-6 py-4 text-lg font-bold text-black transition'
+        <Button
           onClick={(e) => {
             e.preventDefault();
             setIsWalletModalOpen(true);
@@ -84,7 +83,7 @@ export const WalletButton: React.FC = () => {
               d='m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9'
             />
           </svg>
-        </button>
+        </Button>
       </>
     );
   };

@@ -4,7 +4,6 @@ import { SUPPORTED_CHAINS } from 'config/chain';
 import { PLATFORM } from 'config/setting';
 import useConfig from 'hooks/config/useConfig';
 import { useMemo } from 'react';
-import { INetwork } from 'types/common';
 import { WagmiConfig, configureChains, createClient } from 'wagmi';
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet';
 import { InjectedConnector } from 'wagmi/connectors/injected';
@@ -15,9 +14,16 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { infuraProvider } from 'wagmi/providers/infura';
 import { publicProvider } from 'wagmi/providers/public';
 
+
 type TProps = {
   children: React.ReactNode;
 };
+
+export interface INetwork {
+  chainId: number;
+  name: string;
+  explorerUrl: string;
+}
 
 const alchemyId = process.env.NEXT_PUBLIC_ALCHEMY_ID || '';
 const infuraId = process.env.NEXT_PUBLIC_INFURA_ID || '';
