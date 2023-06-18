@@ -2,41 +2,64 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono',
-    'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono',
-    'Courier New', monospace;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 215 20.2% 65.1%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 216 34% 17%;
+    --radius: 0.5rem;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
 
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  body {
+    @apply bg-background text-foreground;
 
-  --primary-glow: radial-gradient(rgba(243, 201, 168, 0.457), rgba(136, 0, 255, 0.2));
-  --secondary-glow: linear-gradient(
-    to bottom right,
-    rgba(1, 65, 255, 0),
-    rgba(1, 65, 255, 0),
-    rgba(1, 65, 255, 0.3)
-  );
-
-  --tile-start-rgb: 2, 13, 46;
-  --tile-end-rgb: 2, 5, 19;
-  --tile-border: conic-gradient(
-    #ffffff80,
-    #ffffff40,
-    #ffffff30,
-    #ffffff20,
-    #ffffff10,
-    #ffffff10,
-    #ffffff80
-  );
-
-  --callout-rgb: 20, 20, 20;
-  --callout-border-rgb: 108, 108, 108;
-  --card-rgb: 100, 100, 100;
-  --card-border-rgb: 200, 200, 200;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
 
 * {
@@ -51,8 +74,18 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb));
+// @layer base {
+  
+// }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  appearance: textfield;
 }

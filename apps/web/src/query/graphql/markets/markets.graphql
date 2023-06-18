@@ -1,0 +1,23 @@
+query {
+  markets {
+    id
+    borrowRate
+    cash
+    collateralFactor
+    exchangeRate
+    symbol
+    name
+    underlyingAddress
+    underlyingName
+    underlyingSymbol
+    underlyingPrice
+    totalBorrows
+    totalSupply
+    reserveFactor
+    accrualBlockNumber
+    blockTimestamp
+    borrowIndex
+    underlyingPriceUSD
+    underlyingDecimals
+  }
+}
