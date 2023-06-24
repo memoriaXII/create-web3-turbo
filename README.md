@@ -1,6 +1,6 @@
-# 📦 Turborepo Web3 Starter Kit
+# 📦 Create web3 turbo
 
-<img width="1254" alt="Screenshot 2023-01-18 at 5 25 01 PM" src="https://user-images.githubusercontent.com/56249189/213133544-bcc0dae1-9146-49c2-b2ab-263d14cb671e.png">
+<img width="1920" alt="Cover - 1" src="https://github.com/memoriaXII/create-web3-turbo/assets/56249189/0ebff69f-084e-49e6-8db1-c403f06e872b">
 
 This boilerplate is based on [Turborepo](https://github.com/vercel/turborepo).
 It uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
