@@ -82,7 +82,7 @@
     "postcss": "8.4.23",
     "prettier": "^2.8.7",
     "start-server-and-test": "1.15.2",
-    "stylelint": "^15.6.2",
+    "stylelint": "^15.10.1",
     "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-standard-scss": "^9.0.0",
     "tailwind-merge": "^1.13.0",
