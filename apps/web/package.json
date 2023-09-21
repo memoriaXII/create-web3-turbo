@@ -39,7 +39,7 @@
     "ethers": "^5.7.2",
     "formik": "^2.4.0",
     "framer-motion": "^10.12.16",
-    "graphql": "^16.6.0",
+    "graphql": "^16.8.1",
     "lodash": "^4.17.21",
     "lucide-react": "^0.233.0",
     "next": "^13.4.4",
